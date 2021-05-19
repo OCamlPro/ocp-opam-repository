@@ -45,5 +45,5 @@ depends: [
 
 url {
     src: "https://github.com/ocamlpro/ez_cmdliner/archive/v0.3.0.tar.gz"
-    checksum: [ "sha256=bbb0a59faa7db9f813bea9c63bb9060f64f77f0bb4c8ea1c97952f4396ff3b78" ]
+    checksum: [ "sha256=9bb92813c2f7aede5afd7436d9dc935a725c40039c5e96bd775c38fe094b63b5" ]
 }
