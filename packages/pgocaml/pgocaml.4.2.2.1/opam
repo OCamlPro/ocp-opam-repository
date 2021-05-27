@@ -1,0 +1,35 @@
+opam-version: "2.0"
+synopsis: "Native OCaml interface to PostgreSQL databases"
+description: """
+PGOCaml provides an interface to PostgreSQL databases for OCaml applications.
+Note that it speaks the PostgreSQL wire protocol directly, and therefore does
+not need to create bindings to the PostgreSQL libpq C library.
+The PPX syntax extension is now packaged separately as 'pgocaml_ppx'.
+You will want to take a look at it if you're considering using PGOCaml.
+"""
+maintainer: "dario.teixeira@nleyten.com"
+authors: ["Richard W.M. Jones <rich@annexia.org>"]
+homepage: "https://github.com/darioteixeira/pgocaml"
+bug-reports: "https://github.com/darioteixeira/pgocaml/issues"
+dev-repo: "git+https://github.com/darioteixeira/pgocaml.git"
+license: "LGPL-2.0 with OCaml linking exception"
+build: [["dune" "build" "-p" name "-j" jobs]]
+depends: [
+  "calendar" {>= "2.00"}
+  "csv"
+  "dune" {>= "1.10"}
+  "hex"
+  "ocaml" {>= "4.07"}
+  "ppx_sexp_conv"
+  "re"
+  "ppx_deriving" {>= "4.0"}
+  "rresult"
+  "sexplib"
+]
+url {
+  src: "https://github.com/OCamlPro/pgocaml/archive/refs/tags/v4.2.2.1.tar.gz"
+  checksum: [
+    "md5=15cdcd502ca1b0002b3824e4407a9a41"
+    "sha512=96e6e4467d46886ea19e5cefe3b8586c3ea824ebd0ded6871127318587a525f415a30c3b808613c4dac8e1f6d3378e5465de59ac3c1e6e1f5313b5e42eb57528"
+  ]
+}
