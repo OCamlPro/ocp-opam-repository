@@ -52,5 +52,5 @@ depends: [
 
 url {
     src: "https://github.com/OCamlPro/ocaml-solidity/archive/v0.3.3.tar.gz"
-    checksum: [ "sha256=702cfe5047df1ed14c784d19900c18452cea06db86e71f5364e107aeaf708811" ]
+    checksum: [ "sha256=6a1fa9560fb8877c465207efdca9f20e76e98dc44285fdb3ae6e4d3a9989506f" ]
 }
