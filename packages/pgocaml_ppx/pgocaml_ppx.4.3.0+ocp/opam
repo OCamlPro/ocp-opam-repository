@@ -1,0 +1,29 @@
+opam-version: "2.0"
+synopsis: "PPX extension for PGOCaml"
+description: """
+PGOCaml provides an interface to PostgreSQL databases for OCaml applications.
+This PPX syntax extension enables one to directly embed SQL statements inside
+the OCaml code. The extension uses the 'describe' feature of PostgreSQL to
+obtain type information about the database. This allows PGOCaml to check at
+compile-time if the program is indeed consistent with the database structure.
+"""
+maintainer: "dario.teixeira@nleyten.com"
+authors: ["Richard W.M. Jones <rich@annexia.org>"]
+homepage: "https://github.com/darioteixeira/pgocaml"
+bug-reports: "https://github.com/darioteixeira/pgocaml/issues"
+dev-repo: "git+https://github.com/darioteixeira/pgocaml.git"
+license: "LGPL-2.0 with OCaml linking exception"
+build: [["dune" "build" "-p" name "-j" jobs]]
+depends: [
+  "dune" {>= "1.10"}
+  "ocaml" {>= "4.07"}
+  "pgocaml" {= version}
+  "ppxlib" {>= "0.16.0"}
+  "ppx_optcomp"
+]
+url {
+  src: "https://github.com/lefessan/pgocaml/archive/refs/tags/v4.3.0+ocp.tar.gz"
+  checksum: [
+    "sha512=831bebed375eee16b7c247ac234f47d51d7a473734fa81f9d1c18a9247b3732a2cfcc472c8382e1f86656f9cd7257955f06961f35ab436dabb8f0c418647837f"
+  ]
+}
