@@ -1,0 +1,49 @@
+opam-version: "2.0"
+license: "LGPL-2.1-only with OCaml-LGPL-linking-exception"
+synopsis:
+  "The freeton_ocaml_sdk library is a binding over TON-SDK for Free TON"
+description: """\
+This project implements an OCaml-Rust binding to the TON-SDK, and a
+Graphql client to interact with the node.
+"""
+authors: ["Fabrice Le Fessant <fabrice.le_fessant@ocamlpro.com>"]
+maintainer: ["Fabrice Le Fessant <fabrice.le_fessant@ocamlpro.com>"]
+homepage: "https://ocamlpro.github.io/freeton_ocaml_sdk"
+doc: "https://ocamlpro.github.io/freeton_ocaml_sdk/sphinx"
+bug-reports: "https://github.com/ocamlpro/freeton_ocaml_sdk/issues"
+dev-repo: "git+https://github.com/ocamlpro/freeton_ocaml_sdk.git"
+tags: "org:ocamlpro"
+build: [
+  ["dune" "subst"] {dev}
+  ["sh" "-c" "./scripts/before.sh build '%{name}%'"]
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+  ["sh" "-c" "./scripts/after.sh build '%{name}%'"]
+]
+install: [
+  ["sh" "-c" "./scripts/before.sh install '%{name}%'"]
+]
+depends: [
+  "ocaml" {>= "4.08.0"}
+  "dune" {>= "2.6.0"}
+  "ez_api" {}
+  "base-threads" {}
+  "ppx_inline_test" {with-test}
+  "ppx_expect" {with-test}
+  "odoc" {with-doc}
+  "ocamlformat" {with-test}
+]
+
+url {
+    src: "https://github.com/ocamlpro/freeton_ocaml_sdk/archive/v0.4.4.tar.gz"
+    checksum: [ "sha256=232fd4adbd19d55320a3ac0a3e9e309f3ac2da0fad17d3e8c01ea32d8a16065b" ]
+}
