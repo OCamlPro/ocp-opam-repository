@@ -43,7 +43,7 @@ depends: [
   "zarith" {}
   "hex" {>= "1"}
   "fileutils" {>= "0.6"}
-  "ez_file" {>= "0.1"}
+  "ez_file" {>= "0.1" & < "0.3.0" }
   "ppx_inline_test" {with-test}
   "ppx_expect" {with-test}
   "odoc" {with-doc}

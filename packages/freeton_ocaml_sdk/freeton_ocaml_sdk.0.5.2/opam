@@ -2,8 +2,7 @@ opam-version: "2.0"
 license: "LGPL-2.1-only with OCaml-LGPL-linking-exception"
 synopsis:
   "OCaml binding to the TON-SDK and the Graphql API for Free TON blockchain"
-description: """
-
+description: """\
 The freeton_ocaml_sdk library is a binding to the TON-SDK Rust library
 and the GraphQL API of the FreeTON blockchain. It can be used to build
 application to query the account states, transactions and other blockchain
@@ -35,12 +34,15 @@ install: [
 ]
 depends: [
   "ocaml" {>= "4.08.0"}
-  "dune" {>= "2.6.0"}
+  "dune" {>= "2.7.0"}
   "zarith" {> "1"}
+  "freeton_ocaml_rust" {= version}
+  "freeton_base_lib" {= version}
   "ezjsonm" {}
-  "ez_file" {>= "0.2" & < "0.3.0" }
+  "ez_file" {>= "0.3" & < "1.0.0" }
   "ez_api" {}
   "cohttp-lwt-unix" {}
+  "ssl" {>= "0.5.9" & < "1.0.0"}
   "ppx_deriving_encoding" {}
   "lwt_ssl" {>= "1.1"}
   "conf-rust-2018" {}
@@ -54,6 +56,6 @@ conflicts: [ "ocplib-json-typed" ]
 
 
 url {
-    src: "https://github.com/ocamlpro/freeton_ocaml_sdk/archive/v0.3.0.tar.gz"
-    checksum: [ "sha256=c11208b079d0a76855a0094ecb0dd5f68af972c31c6a13561060eca8f12f63cf" ]
+    src: "https://github.com/ocamlpro/freeton_ocaml_sdk/archive/v0.5.2.tar.gz"
+    checksum: [ "sha256=d1204c35bdd62bca56edc9a2ffd599862e4d65948c46dddbad8a8049b6d9dcbc" ]
 }

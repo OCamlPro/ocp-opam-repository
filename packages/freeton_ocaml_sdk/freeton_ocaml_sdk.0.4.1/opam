@@ -38,7 +38,7 @@ depends: [
   "zarith" {> "1"}
   "freeton_client_lib" {= version}
   "ezjsonm" {}
-  "ez_file" {>= "0.2"}
+  "ez_file" {>= "0.2" & < "0.3.0" }
   "ez_api" {}
   "cohttp-lwt-unix" {}
   "ssl" {>= "0.5.9" & < "1.0.0"}

@@ -35,15 +35,9 @@ install: [
 depends: [
   "ocaml" {>= "4.08.0"}
   "dune" {>= "2.7.0"}
-  "zarith" {> "1"}
-  "ezjsonm" {}
-  "ez_file" {>= "0.2" & < "0.3.0" }
-  "ez_api" {>= "1.0"}
-  "cohttp-lwt-unix" {}
-  "ssl" {>= "0.5.9" & < "1.0.0"}
   "ppx_deriving_encoding" {}
-  "lwt_ssl" {>= "1.1"}
-  "conf-libssl" {}
+  "ez_api" {}
+  "base-threads" {}
   "ppx_inline_test" {with-test}
   "ppx_expect" {with-test}
   "odoc" {with-doc}
@@ -51,6 +45,6 @@ depends: [
 ]
 
 url {
-    src: "https://github.com/ocamlpro/freeton_ocaml_sdk/archive/v0.5.1.tar.gz"
-    checksum: [ "sha256=5c8c040bfd46a9e6fa418ee0b05eada022c06e6910631d52342da77143abeed6" ]
+    src: "https://github.com/ocamlpro/freeton_ocaml_sdk/archive/v0.5.2.tar.gz"
+    checksum: [ "sha256=d1204c35bdd62bca56edc9a2ffd599862e4d65948c46dddbad8a8049b6d9dcbc" ]
 }

@@ -44,7 +44,7 @@ depends: [
   "solidity-typechecker" {}
   "solidity-parser" {>= "0.3.6" & < "1.0.0"}
   "ocplib_stuff" {}
-  "ez_file" {}
+  "ez_file" { >= "0.1" & < "0.3.0" }
   "ppx_inline_test" {with-test}
   "ppx_expect" {with-test}
   "odoc" {with-doc}
