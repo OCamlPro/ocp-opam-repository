@@ -1,0 +1,54 @@
+opam-version: "2.0"
+license: "LGPL-2.1-only with OCaml-LGPL-linking-exception"
+synopsis:
+  "The 'ft' tool is a multi-account terminal wallet for the Free TON blockchain (meta-package)"
+description: """\
+The 'ft' tool is a multi-account terminal wallet for Free TON users and developers. It implements account creation/queries, contract deployments and calls, and inspection of blockchain state. It is the swissknife of Free TON.
+
+The FreeTON blockchain is the open-source version of the Telegram Open
+Network. FreeTON is one of the only blockchains with dynamic sharding
+for unlimited scalability and immediate finality for real-time
+applications. It also uses Proof-of-Stake with delegation through
+smart contracts. Smart contracts are written in dialects of Solidity
+and C++ with asynchonous external calls.
+"""
+authors: ["Fabrice Le Fessant <fabrice.le_fessant@origin-labs.com>"]
+maintainer: ["Fabrice Le Fessant <fabrice.le_fessant@origin-labs.com>"]
+homepage: "https://ocamlpro.github.io/freeton_wallet"
+doc: "https://ocamlpro.github.io/freeton_wallet/sphinx"
+bug-reports: "https://github.com/ocamlpro/freeton_wallet/issues"
+dev-repo: "git+https://github.com/ocamlpro/freeton_wallet.git"
+tags: "org:ocamlpro"
+build: [
+  ["dune" "subst"] {dev}
+  ["sh" "-c" "./scripts/before.sh build '%{name}%'"]
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+  ["sh" "-c" "./scripts/after.sh build '%{name}%'"]
+]
+install: [
+  ["sh" "-c" "./scripts/before.sh install '%{name}%'"]
+]
+depends: [
+  "ocaml" {>= "4.08.0"}
+  "dune" {>= "2.7.0"}
+  "freeton_crawler_db_versions" {= version}
+  "ppx_inline_test" {with-test}
+  "ppx_expect" {with-test}
+  "odoc" {with-doc}
+  "ocamlformat" {with-test}
+]
+
+url {
+    src: "https://github.com/ocamlpro/freeton_wallet/archive/v0.9.0.tar.gz"
+    checksum: [ "sha256=592e1c1eccc4de01c3e4d3b5ee1694a3cd19e43373be1918f7ed834cd4f88279" ]
+}
