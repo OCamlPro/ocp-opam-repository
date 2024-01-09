@@ -43,6 +43,7 @@ depends: [
   "odoc" {with-doc}
   "ocamlformat" {with-test}
 ]
+available: os ="linux"
 
 url {
     src: "https://github.com/ocamlpro/ez_search/archive/v0.2.0.tar.gz"
